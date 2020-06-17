@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo 'WORKING WITH MAP-REDUCE IN CLOUDERA'
+
+hadoop jar /usr/lib/hadoop-0.20-mapreduce/contrib/streaming/hadoop-streaming-2.6.0-mr1-cdh5.12.0.jar -D mapred.reduce.tasks=1 -file dst/Code/Mapper -mapper dst/Code/Mapper -file dst/Code/Reducer -reducer dst/Code/Reducer -input /user/root/In -output /user/root/out
+
