@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+echo 'WORKING WITH ROBO3T QUERY'
+
+mongo --host buax1aiwspzvpc2-mongodb.services.clever-cloud.com --port 27017 --authenticationDatabase buax1aiwspzvpc2 --authenticationMechanism SCRAM-SHA-1 -u uwyfwcargufdxgma1hrk -p uduwnoSOiGrFEaWeniup <<EOF
+
+use buax1aiwspzvpc2
+
+db.Neo_ST.insertone({ name : "Donavan",
+                      age   : 22,
+                      dept  : "IT"})
+
+db.Neo_ST.insertone({ name : "Brand",
+                      age   : 22,
+                      dept  : "Developer"})
+
+db.Neo_ST.insertone({ name : "Alexy",
+                      age   : 29,
+                      dept  : "HR"})
+
+db.getCollection('Neo_ST').find({name:'John'})
+
+EOF
+
+
+
