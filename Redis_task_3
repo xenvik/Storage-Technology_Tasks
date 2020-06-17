@@ -1,0 +1,92 @@
+#!/usr/bin/env bash
+
+cd $HOME/dst-stu/src/redis-6.0.3/src
+echo WORKING WITH SET
+redis-cli << EOF
+
+
+echo 'set add Novosibirsk'
+set add Novosibirsk
+echo 'get add'
+get add
+
+echo 'set phone 84645161651'
+set phone 84645161651
+echo 'get phone'
+get phone
+
+echo 'set email dfasfd45@gmail.com'
+set email dfasfd45@gmail.com
+echo 'get email'
+get email
+
+echo "EXAMPLE OF MSET"
+echo "mset name 'name1' email 'email dfasfd45@gmail.com'"
+mset name 'name1' email 'email dfasfd45@gmail.com'
+echo "get name"
+get name
+echo "get email"
+get email
+
+echo "EXAMPLE OF MGET"
+echo "mget name email "
+mget name email 
+
+echo "EXAMPLE OF INCR"
+echo "set val '0'"
+set val "0"
+echo "incr val"
+incr val
+echo "get val"
+get val
+
+echo "EXAMPLE OF MSET AND MGET(HASH)"
+echo "mset user:name1:add 'Novosibirsk' user:name1:dep 'IT' user:name1:nat 'Russia' user:name1:phone '8454565555' "
+echo "mset user:name2:add 'Moscow' user:name2:dep 'Tester' user:name3:nat 'India' user:name1:phone '85468523' "
+mset user:name1:add 'Novosibirsk' user:name1:dep 'IT' user:name1:nat 'Russia' user:name1:phone '8454565555'
+mset user:name2:add 'Moscow' user:name2:dep 'Tester' user:name3:nat 'India' user:name1:phone '85468523'
+echo "mget user:name1:nat user:name1:add"
+mget user:name1:nat user:name1:add
+
+
+echo "EXAMPLE OF LIST"
+echo "rpush name2:list john ron tom jose cooper "
+rpush name2:list john ron tom jose cooper
+echo "llen name1:list"
+llen name2:list
+echo "lrange name2:list 0 -1"
+lrange name2:list 0 -1
+echo "lrem name2:list 0 john"
+lrem name2:list 0 john
+echo "lpop name2:list"
+lpop name2:list
+echo "lpush name2:list ronny"
+lpush name2:list ronny
+echo "rpush name2:list kite"
+rpush name2:list kite
+echo "rpoplpush name2:list name2:xxxxxx"
+rpoplpush name2:list name2:xxxxxx
+
+echo "EXAMPLE OF SET"
+echo "sadd name1 Jess don"
+sadd name1 Jess don
+echo "smembers name1"
+smembers name1
+echo "sadd name2 don yu"
+sadd name2 don yu
+echo "sinter name1 name2"
+sinter name1 name2
+echo "sunion name1 name2"
+sunion name1 name2
+
+echo "SELECTING DIFFERENT DATABASE"
+echo "select 1"
+select 1
+echo "select 0"
+select 0
+
+
+
+EOF
+
+
