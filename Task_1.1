@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+#echo "Hello"
+
+DATA_DIR="$HOME/dst-stu/d"
+
+#head -n 5 "$DATA_DIR/f1.tsv"
+
+#cat "$DATA_DIR/f1.tsv"
+
+cat "$DATA_DIR/f1.tsv" | sed -r 's/[ ]+/\n/g' | sort | uniq -c | sort -r | tee "$DATA_DIR/f1-out.tsv"
+
+
+
+
