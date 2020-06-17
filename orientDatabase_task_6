@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo 'Working with OrientDB'
+cd $HOME/Downloads/orientdb-community-importers-2.2.37/bin
+./server.sh 
