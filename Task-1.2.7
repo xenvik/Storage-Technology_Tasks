@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+DATA_DIR="$HOME/dst-stu/d"
+PROG_DIR="$HOME/dst-stu/src"
+
+
+
+echo " Use `src/csv-to-tree.awk` to build a tree in the `dot`-format from `tre.csv`"
+cat "$DATA_DIR/tre.csv" |  awk -f "$PROG_DIR/csv-to-tree.awk" > "$DATA_DIR/tre.dot" && dot -Tsvg -Kdot -o"$DATA_DIR/tre.svg" "$DATA_DIR/tre.dot" && gwenview "$DATA_DIR/tre.svg"

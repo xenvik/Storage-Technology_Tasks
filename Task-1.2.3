@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+DATA_DIR="$HOME/dst-stu/d"
+PROG_DIR="$HOME/dst-stu/src"
+
+
+echo "Use `split` to divide `l1.log` by 4 files. First create folder `d/log/l1` with `mkdir`"
+split -n4 "$DATA_DIR/l1.log"
